@@ -1,0 +1,168 @@
+theme: rusty, wood, stone, plate, glass, book, brick
+background: concrete, machine, shelves, brickWall, metal, wood, cogs, glass
+direction: forward, backwards
+
+appearanceEffect:
+    instant:
+
+    resize:
+        type: direction
+        duration: double(1)
+
+    alpha:
+        type: direction
+        duration: double(1)
+
+disappearanceEffect:
+    instant:
+
+    resize:
+        type: direction
+        duration: double(1)
+
+    alpha:
+        type: direction
+        duration: double(1)
+
+    fall:
+        speed: double
+        gravity: double
+
+    kick:
+        speed: double(0)
+        gravity: double
+        angularSpeed: double
+
+resizePaddle:
+
+level:
+    background: background
+    breakableTheme: theme
+    unbreakableTheme: theme
+    fillingMode: fillingMode
+    brickDisappearanceEffect: settings.disappearanceEffect
+    music: int(0-4)
+
+bonusType:
+    default:
+        imageNumber: int(0)
+
+    resize:
+        amount: double
+        min: double(1)
+        max: double(1)
+
+    ball:
+        amount: int
+
+    score:
+        amount: int
+
+    split:
+        angle: double
+        dAngle: double
+        amount: int(1)
+
+    magnet:
+        time: double(1)
+
+    gun:
+        ammo: int
+
+    ammo:
+        amount: int
+
+filter: chessboard, breakable, all, interlacedRows, interlacedColumns
+
+fillingMode:
+    horizontal:
+        brickAppearanceEffect: #appearanceEffect
+        filter: filter
+        negative: boolean
+        duration: double(0)
+        brickDuration: double(0)
+
+    vertical:
+        brickAppearanceEffect: #appearanceEffect
+        filter: filter
+        negative: boolean
+        duration: double(0)
+        brickDuration: double(0)
+
+    random:
+        brickAppearanceEffect: #appearanceEffect
+        filter: filter
+        negative: boolean
+        duration: double(0)
+        brickDuration: double(0)
+
+    rectangle:
+        brickAppearanceEffect: #appearanceEffect
+        filter: filter
+        negative: boolean
+        duration: double(0)
+        brickDuration: double(0)
+
+    radial:
+        type: in, out
+        brickAppearanceEffect: #appearanceEffect
+        filter: filter
+        negative: boolean
+        duration: double(0)
+        brickDuration: double(0)
+
+    vortex:
+        type: direction
+        filter: filter
+        negative: boolean
+        duration: double(0)
+        dDistance: double
+        dAngle: double
+        dImageAngle: double
+
+
+settings:
+    lives: int(0)
+    maxLives: int(0)
+    lostBallDelay: double(0)
+
+    ball:
+        angle: double
+        speed: double(>0)
+        size: double(>0)
+        alterAngle: double
+        appearanceEffect: #appearanceEffect
+
+    paddle:
+        width: double(>0)
+        height: double(>0)
+
+    score:
+        raisingSpeed: double(>0)
+        duration: double(0)
+        dSize: double(>0)
+        vertical: int
+        horizontal: int
+        single: int
+
+    level: map(level)
+
+    bonus:
+        speed: double(1)
+        probability: double(0..1)
+        width: double(1)
+        height: double(1)
+        typeWidthK: double(1)
+        typeHeightK: double(1)
+
+        appearanceEffect: #appearanceEffect
+
+        disappearanceEffect: #disappearanceEffect
+
+        type: map(bonusType)
+
+    appearanceEffect: map(appearanceEffect)
+
+    disappearanceEffect: map(disappearanceEffect)
+
+    fillingMode: map(fillingMode)
