@@ -1,7 +1,7 @@
-import {Sprite} from "../lib/sprite.js"
-import {ShapeType} from "../lib/shape.js"
+import {Sprite} from "../Furca/src/sprite.js"
+import {ShapeType} from "../Furca/src/shape.js"
 import {settings} from "./settings.js"
-import {Img} from "../lib/image.js"
+import {Img} from "../Furca/src/image.js"
 
 export class Ball extends Sprite {
     state

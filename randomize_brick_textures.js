@@ -1,7 +1,7 @@
 import {BrickType} from "./settings.js"
-import {floor, rndi} from "../lib/functions.js"
+import {floor, rndi} from "../Furca/src/functions.js"
 import {levelParameters, levelTemplate, newTiles} from "./init_level.js"
-import {num} from "../lib/system.js"
+import {num} from "../Furca/src/system.js"
 
 export function randomizeBrickTextures() {
     const columns = levelTemplate.tileSet.columns

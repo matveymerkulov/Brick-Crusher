@@ -1,8 +1,8 @@
 import {SpriteEffect} from "./sprite_effect.js"
-import {apsk, num} from "../../lib/system.js"
-import {boxWithBoxCollision} from "../../lib/collisions.js"
-import {rad} from "../../lib/functions.js"
-import {currentCanvas} from "../../lib/canvas.js"
+import {apsk, num} from "../../Furca/src/system.js"
+import {boxWithBoxCollision} from "../../Furca/src/collisions.js"
+import {rad} from "../../Furca/src/functions.js"
+import {currentCanvas} from "../../Furca/src/canvas.js"
 
 export class FallEffect extends SpriteEffect {
     #dx

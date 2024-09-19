@@ -1,5 +1,5 @@
 import {TileMapFillingEffect} from "./tile_map_filling_effect.js"
-import {dist, floor, sqrt} from "../../lib/functions.js"
+import {dist, floor, sqrt} from "../../Furca/src/functions.js"
 import {newTiles} from "../init_level.js"
 
 export class RadialFill extends TileMapFillingEffect {

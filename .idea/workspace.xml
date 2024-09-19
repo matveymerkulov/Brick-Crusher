@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="cfb1e038-bb86-4165-aadf-8f1231ce73cf" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Breakout.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ball.js" beforeDir="false" afterPath="$PROJECT_DIR$/ball.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bonus.js" beforeDir="false" afterPath="$PROJECT_DIR$/bonus.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bonus_effect.js" beforeDir="false" afterPath="$PROJECT_DIR$/bonus_effect.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data.js" beforeDir="false" afterPath="$PROJECT_DIR$/data.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/appearance.js" beforeDir="false" afterPath="$PROJECT_DIR$/data/appearance.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/filling_modes.js" beforeDir="false" afterPath="$PROJECT_DIR$/data/filling_modes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/effects/delay.js" beforeDir="false" afterPath="$PROJECT_DIR$/effects/delay.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/effects/fall_effect.js" beforeDir="false" afterPath="$PROJECT_DIR$/effects/fall_effect.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/effects/kick_effect.js" beforeDir="false" afterPath="$PROJECT_DIR$/effects/kick_effect.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/effects/pulsating_label.js" beforeDir="false" afterPath="$PROJECT_DIR$/effects/pulsating_label.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/effects/timed_effect.js" beforeDir="false" afterPath="$PROJECT_DIR$/effects/timed_effect.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fill/radial_fill.js" beforeDir="false" afterPath="$PROJECT_DIR$/fill/radial_fill.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fill/random_fill.js" beforeDir="false" afterPath="$PROJECT_DIR$/fill/random_fill.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fill/tile_map_filling_effect.js" beforeDir="false" afterPath="$PROJECT_DIR$/fill/tile_map_filling_effect.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fill/vortex_fill.js" beforeDir="false" afterPath="$PROJECT_DIR$/fill/vortex_fill.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/init_level.js" beforeDir="false" afterPath="$PROJECT_DIR$/init_level.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/paddle_size.js" beforeDir="false" afterPath="$PROJECT_DIR$/paddle_size.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/randomize_brick_textures.js" beforeDir="false" afterPath="$PROJECT_DIR$/randomize_brick_textures.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/remove_tile.js" beforeDir="false" afterPath="$PROJECT_DIR$/remove_tile.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/score.js" beforeDir="false" afterPath="$PROJECT_DIR$/score.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/settings.js" beforeDir="false" afterPath="$PROJECT_DIR$/settings.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2mHoQMK66660VI8szjzFnnZGnq1" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "D:/Dropbox/Games/Furca",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "settings.editor.selected.configurable": "configurable.group.appearance",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration name="index.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:8090/Breakout/index.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JavaScript Debug.index.html" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="cfb1e038-bb86-4165-aadf-8f1231ce73cf" name="Changes" comment="" />
+      <created>1726742845850</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1726742845850</updated>
+      <workItem from="1726742847071" duration="255000" />
+      <workItem from="1726743148924" duration="586000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

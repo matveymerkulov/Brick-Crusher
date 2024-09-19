@@ -1,10 +1,10 @@
 import {Effect} from "../effects/effect.js"
-import {floor} from "../../lib/functions.js"
+import {floor} from "../../Furca/src/functions.js"
 import {getBrick} from "../remove_tile.js"
 import {level, newTiles} from "../init_level.js"
 import {filter} from "./filters.js"
 import {getAppearanceEffect} from "./tile_map_filling_modes.js"
-import {num} from "../../lib/system.js"
+import {num} from "../../Furca/src/system.js"
 import {bricks, fx} from "../main.js"
 
 export class TileMapFillingEffect extends Effect {

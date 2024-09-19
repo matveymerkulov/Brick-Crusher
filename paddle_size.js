@@ -1,5 +1,5 @@
-import {apsk} from "../lib/system.js"
-import {abs, sign} from "../lib/functions.js"
+import {apsk} from "../Furca/src/system.js"
+import {abs, sign} from "../Furca/src/functions.js"
 import {paddle, settings} from "./settings.js"
 import {initPaddleSize} from "./init_level.js"
 

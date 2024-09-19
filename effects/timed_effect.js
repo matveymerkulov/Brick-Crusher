@@ -1,5 +1,5 @@
 import {SpriteEffect} from "./sprite_effect.js"
-import {num} from "../../lib/system.js"
+import {num} from "../../Furca/src/system.js"
 
 export const TimedEffectType = {
     forward: 0,

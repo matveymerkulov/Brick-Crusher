@@ -1,5 +1,5 @@
 import {Effect} from "./effect.js"
-import {num} from "../../lib/system.js"
+import {num} from "../../Furca/src/system.js"
 
 export class Delay extends Effect {
     #duration

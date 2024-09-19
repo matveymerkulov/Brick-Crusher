@@ -1,10 +1,10 @@
-import {mouse, mutedSound, num, play, stopSound} from "../lib/system.js"
-import {abs, atan2, clamp, rad, sin} from "../lib/functions.js"
-import {project} from "../lib/project.js"
+import {mouse, mutedSound, num, play, stopSound} from "../Furca/src/system.js"
+import {abs, atan2, clamp, rad, sin} from "../Furca/src/functions.js"
+import {project} from "../Furca/src/project.js"
 import {loadData} from "./data.js"
 import {firingPoints, init, livesLabel, messageLabel, paddle, scoreLabel, settings, turrets} from "./settings.js"
-import {Layer} from "../lib/layer.js"
-import {Num} from "../lib/variable/number.js"
+import {Layer} from "../Furca/src/layer.js"
+import {Num} from "../Furca/src/variable/number.js"
 import {
     blocksLeft,
     initialBallY,
@@ -20,7 +20,7 @@ import {removeTile} from "./remove_tile.js"
 import {updateScore} from "./score.js"
 import {Delay} from "./effects/delay.js"
 import {updatePaddleWidth} from "./paddle_size.js"
-import {Sprite} from "../lib/sprite.js"
+import {Sprite} from "../Furca/src/sprite.js"
 import {gun, magnet} from "./bonus_effect.js"
 
 project.getAssets = () => {

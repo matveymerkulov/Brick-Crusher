@@ -1,5 +1,5 @@
-import {Sum} from "../../lib/function/sum.js"
-import {Rnd} from "../../lib/function/rnd.js"
+import {Sum} from "../../Furca/src/function/sum.js"
+import {Rnd} from "../../Furca/src/function/rnd.js"
 
 export const fillingMode = {
     horizontalChessboard: [{

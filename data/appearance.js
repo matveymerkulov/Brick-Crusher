@@ -1,4 +1,4 @@
-import {Rnd} from "../../lib/function/rnd.js"
+import {Rnd} from "../../Furca/src/function/rnd.js"
 
 export let appearanceEffect = {
     default: {

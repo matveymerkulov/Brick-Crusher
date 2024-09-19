@@ -1,6 +1,6 @@
 import {TimedEffect} from "./timed_effect.js"
-import {pi, sin} from "../../lib/functions.js"
-import {num} from "../../lib/system.js"
+import {pi, sin} from "../../Furca/src/functions.js"
+import {num} from "../../Furca/src/system.js"
 
 export class PulsatingLabel extends TimedEffect {
     #fontSize

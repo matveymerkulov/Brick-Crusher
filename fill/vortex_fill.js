@@ -1,8 +1,8 @@
-import {atan2, cos, dist, rad, sin} from "../../lib/functions.js"
+import {atan2, cos, dist, rad, sin} from "../../Furca/src/functions.js"
 import {level, newTiles} from "../init_level.js"
 import {getBrick} from "../remove_tile.js"
 import {Effect} from "../effects/effect.js"
-import {num} from "../../lib/system.js"
+import {num} from "../../Furca/src/system.js"
 
 export class VortexFill extends Effect {
     #parameters

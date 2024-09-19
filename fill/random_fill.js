@@ -1,5 +1,5 @@
 import {TileMapFillingEffect} from "./tile_map_filling_effect.js"
-import {shuffleArray} from "../../lib/functions.js"
+import {shuffleArray} from "../../Furca/src/functions.js"
 import {newTiles} from "../init_level.js"
 
 export class RandomFill extends TileMapFillingEffect {
