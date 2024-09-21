@@ -1,5 +1,5 @@
 import {play} from "../Furca/src/system.js"
-import {brickStart, BrickType, settings, tuneBrickSprite} from "./settings.js"
+import {brickStart, BrickType, main, tuneBrickSprite} from "./data/main.js"
 import {emptyTile} from "../Furca/src/tile_map.js"
 import {bricks, checkForVictory, fx} from "./main.js"
 import {blocksLeft, level, levelParameters, levelTemplate, newTiles} from "./init_level.js"
@@ -25,7 +25,7 @@ export function removeTile(ball, column, row, snd) {
 
     blocksLeft.decrement(1 + dx + dy)
 
-    addScore(settings.score[dx === 1 ? (dy === 1 ? "single" : "vertical") : "horizontal"])
+    addScore(main.score[dx === 1 ? (dy === 1 ? "single" : "vertical") : "horizontal"])
 
     checkForVictory()
 

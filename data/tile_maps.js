@@ -1,11 +1,11 @@
 // noinspection DuplicatedCode
 
-import {TileSet} from "../Furca/src/tile_set.js"
-import {tileMap, tileMaps, tileSet} from "../Furca/src/project.js"
-import {ImageArray} from "../Furca/src/image_array.js"
-import {TileMap} from "../Furca/src/tile_map.js"
-import {texture} from "../Furca/src/system.js"
-import {bricks} from "./main.js"
+import {TileSet} from "../../Furca/src/tile_set.js"
+import {tileMap, tileMaps, tileSet} from "../../Furca/src/project.js"
+import {ImageArray} from "../../Furca/src/image_array.js"
+import {TileMap} from "../../Furca/src/tile_map.js"
+import {texture} from "../../Furca/src/system.js"
+import {bricks} from "../main.js"
 
 export function loadData() {
     tileSet.bricks = new TileSet(new ImageArray(texture["bricks"], 32, 14))

@@ -1,11 +1,10 @@
-import {paddle, turrets} from "./settings.js"
+import {paddle, turrets} from "./data/main.js"
 import {setPaddleWidth} from "./paddle_size.js"
 import {initPaddleSize} from "./init_level.js"
 import {balls, BallState, lives} from "./main.js"
 import {addScore} from "./score.js"
 import {Ball} from "./ball.js"
 import {removeFromArrayByIndex} from "../Furca/src/functions.js"
-import {bonusSettings} from "./data/bonus.js"
 
 export let magnet = false, gun = false
 

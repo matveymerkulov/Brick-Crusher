@@ -1,5 +1,5 @@
 import {project, tileMap} from "../Furca/src/project.js"
-import {brickStart, messageLabel, paddle, settings} from "./settings.js"
+import {brickStart, main, messageLabel, paddle} from "./data/main.js"
 import {balls, BallState, fx, GameState, lives, setGameState} from "./main.js"
 import {Num} from "../Furca/src/variable/number.js"
 import {setScore} from "./score.js"
@@ -25,18 +25,18 @@ export function initPaddleSize() {
     minPaddleX = -level.halfWidth + d
     maxPaddleX = level.halfWidth - d
     paddleY = level.halfHeight - paddle.halfHeight
-    initialBallY = paddle.topY - 0.5 * settings.ball.size
+    initialBallY = paddle.topY - 0.5 * main.ball.size
 }
 
 export function initRound() {
-    setPaddleWidth(settings.paddle.width)
+    setPaddleWidth(main.paddle.width)
     initPaddleSize()
 
     balls.clear()
-    let ball = new Ball(0, 9.25, settings.ball.size, settings.ball.angle, settings.ball.speed, BallState.appearing)
+    let ball = new Ball(0, 9.25, main.ball.size, main.ball.angle, main.ball.speed, BallState.appearing)
     balls.add(ball)
 
-    const effect = getAppearanceEffect(fx, undefined, settings.ball.appearanceEffect)(ball)
+    const effect = getAppearanceEffect(fx, undefined, main.ball.appearanceEffect)(ball)
     effect.next = () => {
         ball.state = BallState.onPaddle
         setGameState(GameState.rolling)
@@ -59,7 +59,7 @@ export function initLevel() {
     level = levelTemplate.copy()
     level.clear()
 
-    lives.value = settings.lives
+    lives.value = main.lives
     setScore(0)
     messageLabel.show("")
 
@@ -78,7 +78,7 @@ export function initLevel() {
         blocksLeft.increment()
     })
 
-    paddle.setSize(settings.paddle.width, settings.paddle.height)
+    paddle.setSize(main.paddle.width, main.paddle.height)
     initRound()
 
     randomizeBrickTextures()

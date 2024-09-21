@@ -1,4 +1,4 @@
-import {BrickType} from "./settings.js"
+import {BrickType} from "./data/main.js"
 import {floor, rndi} from "../Furca/src/functions.js"
 import {levelParameters, levelTemplate, newTiles} from "./init_level.js"
 import {num} from "../Furca/src/system.js"

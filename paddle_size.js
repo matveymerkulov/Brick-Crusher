@@ -1,14 +1,14 @@
 import {apsk} from "../Furca/src/system.js"
 import {abs, sign} from "../Furca/src/functions.js"
-import {paddle, settings} from "./settings.js"
+import {main, paddle} from "./data/main.js"
 import {initPaddleSize} from "./init_level.js"
 
-let actualPaddleWidth = settings.paddle.minWidth
+let actualPaddleWidth = main.paddle.minWidth
 
 export function updatePaddleWidth() {
     if(paddle.width !== actualPaddleWidth) {
         let difference = actualPaddleWidth - paddle.width
-        let d = apsk * settings.paddle.changingSpeed * sign(difference)
+        let d = apsk * main.paddle.changingSpeed * sign(difference)
         if(abs(difference) < d) {
             paddle.width = actualPaddleWidth
         } else {

@@ -1,7 +1,6 @@
 import {apsk, num} from "../../Furca/src/system.js"
 import {FallEffect} from "./fall_effect.js"
 import {dist, pi} from "../../Furca/src/functions.js"
-import {balls} from "../main.js"
 
 export class KickEffect extends FallEffect {
     constructor(layer, spriteLayer, ball, brick, parameters) {

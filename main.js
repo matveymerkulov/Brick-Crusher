@@ -1,8 +1,8 @@
 import {mouse, mutedSound, num, play, stopSound} from "../Furca/src/system.js"
 import {abs, atan2, clamp, rad, sin} from "../Furca/src/functions.js"
 import {project} from "../Furca/src/project.js"
-import {loadData} from "./data.js"
-import {firingPoints, init, livesLabel, messageLabel, paddle, scoreLabel, settings, turrets} from "./settings.js"
+import {loadData} from "./data/tile_maps.js"
+import {firingPoints, init, livesLabel, main, messageLabel, paddle, scoreLabel, turrets} from "./data/main.js"
 import {Layer} from "../Furca/src/layer.js"
 import {Num} from "../Furca/src/variable/number.js"
 import {
@@ -116,7 +116,7 @@ project.init = () => {
                 })
 
                 function alterBallAngle() {
-                    return rad(num(settings.ball.alterAngle))
+                    return rad(num(main.ball.alterAngle))
                 }
 
                 if(angleChanged === collisionType.horizontal) {
@@ -140,7 +140,7 @@ project.init = () => {
                 }
             } else {
                 ball.setPosition(paddle.x + ball.paddlePosition, initialBallY)
-                if(settings.key.wasPressed) {
+                if(main.key.wasPressed) {
                     if(ball.state === BallState.onPaddle) {
                         //music.play()
                         stopSound(victoryMusic)
@@ -162,22 +162,22 @@ project.init = () => {
             turrets.items[0].setPosition(paddle.x - dx, paddle.y - 1)
             turrets.items[1].setPosition(paddle.x + dx, paddle.y - 1)
 
-            if(canFire && settings.key.isDown) {
+            if(canFire && main.key.isDown) {
                 for(let i = 0; i <= 1; i++) {
                     const firingPoint = firingPoints.items[i]
-                    const bullet = Sprite.create(settings.turret.bullet)
+                    const bullet = Sprite.create(main.turret.bullet)
                     bullet.setPositionAs(firingPoint)
                     bullets.add(bullet)
                 }
 
                 firingPoints.show()
-                const flameDelay = new Delay(fx, settings.turret.flame.delay)
+                const flameDelay = new Delay(fx, main.turret.flame.delay)
                 flameDelay.next = () => {
                     firingPoints.hide()
                 }
 
                 canFire = false
-                const coolDown = new Delay(fx, settings.turret.coolDown)
+                const coolDown = new Delay(fx, main.turret.coolDown)
                 coolDown.next = () => {
                     canFire = true
                 }
@@ -209,7 +209,7 @@ project.init = () => {
                 ballLost.play()
                 setGameState(GameState.preparing)
 
-                const delay = new Delay(fx, settings.lostBallDelay)
+                const delay = new Delay(fx, main.lostBallDelay)
                 delay.next = () => {
                     lives.decrement()
                     initRound()

@@ -1,18 +1,18 @@
-import {Align, defaultCanvas, defaultFontSize} from "../Furca/src/system.js"
-import {lives} from "./main.js"
-import {distFromScreen} from "../Furca/src/canvas.js"
-import {Key} from "../Furca/src/key.js"
-import {Box} from "../Furca/src/box.js"
-import {project, tileMap, tileSet} from "../Furca/src/project.js"
-import {Label} from "../Furca/src/gui/label.js"
-import {score} from "./score.js"
-import {Sprite} from "../Furca/src/sprite.js"
-import {ShapeType} from "../Furca/src/shape.js"
-import {Rnd} from "../Furca/src/function/rnd.js"
-import {Constraint} from "../Furca/src/constraint.js"
-import {Layer} from "../Furca/src/layer.js"
-import {rad} from "../Furca/src/functions.js"
-import {Img} from "../Furca/src/image.js"
+import {Align, defaultCanvas, defaultFontSize} from "../../Furca/src/system.js"
+import {lives} from "../main.js"
+import {distFromScreen} from "../../Furca/src/canvas.js"
+import {Key} from "../../Furca/src/key.js"
+import {Box} from "../../Furca/src/box.js"
+import {project, tileMap, tileSet} from "../../Furca/src/project.js"
+import {Label} from "../../Furca/src/gui/label.js"
+import {score} from "../score.js"
+import {Sprite} from "../../Furca/src/sprite.js"
+import {ShapeType} from "../../Furca/src/shape.js"
+import {Rnd} from "../../Furca/src/function/rnd.js"
+import {Constraint} from "../../Furca/src/constraint.js"
+import {Layer} from "../../Furca/src/layer.js"
+import {rad} from "../../Furca/src/functions.js"
+import {Img} from "../../Furca/src/image.js"
 
 export const BrickType = {
     leftBrick: 16,
@@ -24,7 +24,7 @@ export const BrickType = {
 
 export const brickStart = 16
 
-export const settings = {
+export const main = {
     key: new Key("LMB"),
 
     lives: 2,
@@ -120,15 +120,15 @@ export let hud, scoreLabel, livesLabel, messageLabel, paddle, turrets, firingPoi
 export function init() {
     defaultCanvas(40,24)
 
-    paddle = Sprite.create(settings.paddle)
+    paddle = Sprite.create(main.paddle)
 
     turrets = new Layer()
     firingPoints = new Layer()
     for(let i = 0; i <= 1; i++) {
-        let turret = Sprite.create(settings.turret)
+        let turret = Sprite.create(main.turret)
         turrets.add(turret)
 
-        let firingPoint = Sprite.create(settings.turret.flame)
+        let firingPoint = Sprite.create(main.turret.flame)
         firingPoint.y = turret.topY
         project.actions.push(new Constraint(firingPoint, turret))
         firingPoints.add(firingPoint)
@@ -139,7 +139,7 @@ export function init() {
 
     hud = new Box(0, 0, tileMap.brackets.width - 5, tileMap.brackets.height - 3)
     livesLabel = new Label(hud, [lives], defaultFontSize, Align.right, Align.top, "I1"
-        , Img.create(settings.ball.image), 0.5)
+        , Img.create(main.ball.image), 0.5)
     scoreLabel = new Label(hud, [score], defaultFontSize, Align.center, Align.top, "Z8")
     messageLabel = new Label(hud, [""], defaultFontSize, Align.center, Align.center)
 

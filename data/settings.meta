@@ -40,7 +40,7 @@ level:
     breakableTheme: theme
     unbreakableTheme: theme
     fillingMode: fillingMode
-    brickDisappearanceEffect: settings.disappearanceEffect
+    brickDisappearanceEffect: main.disappearanceEffect
     music: int(0-4)
 
 bonusType:
@@ -121,7 +121,7 @@ fillingMode:
         dImageAngle: double
 
 
-settings:
+main:
     lives: int(0)
     maxLives: int(0)
     lostBallDelay: double(0)

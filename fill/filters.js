@@ -1,4 +1,4 @@
-import {brickStart} from "../settings.js"
+import {brickStart} from "../data/main.js"
 import {newTiles} from "../init_level.js"
 
 export const filter = {
