@@ -2,8 +2,9 @@ import {Sprite} from "../Furca/src/sprite.js"
 import {ShapeType} from "../Furca/src/shape.js"
 import {main} from "./data/main.js"
 import {Img} from "../Furca/src/image.js"
+import {AngularSprite} from "../Furca/src/angular_sprite.js"
 
-export class Ball extends Sprite {
+export class Ball extends AngularSprite {
     state
     paddlePosition
 

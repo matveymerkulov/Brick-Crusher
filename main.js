@@ -22,6 +22,8 @@ import {Delay} from "./effects/delay.js"
 import {updatePaddleWidth} from "./paddle_size.js"
 import {Sprite} from "../Furca/src/sprite.js"
 import {gun, magnet} from "./bonus_effect.js"
+import {initTileMap} from "../Furca/src/tile_map.js"
+import {AngularSprite} from "../Furca/src/angular_sprite.js"
 
 project.getAssets = () => {
     return {
@@ -68,7 +70,7 @@ export function setGameState(state) {
 
 project.init = () => {
     loadData()
-
+    initTileMap()
     init()
 
     project.scene.add(background, level, bullets, bonuses, bricks, paddle, balls, turrets, firingPoints
@@ -135,7 +137,7 @@ project.init = () => {
                     play("collision3")
                 }
 
-                if(ball.topY > paddle.bottomY) {
+                if(ball.top > paddle.bottom) {
                     deadBalls.push(ball)
                 }
             } else {
@@ -165,7 +167,7 @@ project.init = () => {
             if(canFire && main.key.isDown) {
                 for(let i = 0; i <= 1; i++) {
                     const firingPoint = firingPoints.items[i]
-                    const bullet = Sprite.create(main.turret.bullet)
+                    const bullet = AngularSprite.create(main.turret.bullet)
                     bullet.setPositionAs(firingPoint)
                     bullets.add(bullet)
                 }

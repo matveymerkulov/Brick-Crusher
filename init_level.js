@@ -14,6 +14,7 @@ import {Ball} from "./ball.js"
 import {fillingMode} from "./data/filling_modes.js"
 import {levels} from "./data/levels.js"
 import {bonusSettings} from "./data/bonus.js"
+import {AngularSprite} from "../Furca/src/angular_sprite.js"
 
 export const blocksLeft = new Num()
 export let level, levelParameters, bonusPack, bonusPackTotal, music
@@ -25,7 +26,7 @@ export function initPaddleSize() {
     minPaddleX = -level.halfWidth + d
     maxPaddleX = level.halfWidth - d
     paddleY = level.halfHeight - paddle.halfHeight
-    initialBallY = paddle.topY - 0.5 * main.ball.size
+    initialBallY = paddle.top - 0.5 * main.ball.size
 }
 
 export function initRound() {
@@ -97,7 +98,7 @@ export function initLevel() {
     music = loopedSound("music" + levelParameters.music, undefined, undefined, false
         , 0.15)
 
-    project.scene.replace(0, new Sprite(new Img(texture["background" + levelParameters.background]), 0, 0
+    project.scene.replace(0, new AngularSprite(new Img(texture["background" + levelParameters.background]), 0, 0
         , 40, 22))
 
     fill.next = () => {

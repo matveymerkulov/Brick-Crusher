@@ -13,6 +13,7 @@ import {Constraint} from "../../Furca/src/constraint.js"
 import {Layer} from "../../Furca/src/layer.js"
 import {rad} from "../../Furca/src/functions.js"
 import {Img} from "../../Furca/src/image.js"
+import {AngularSprite} from "../../Furca/src/angular_sprite.js"
 
 export const BrickType = {
     leftBrick: 16,
@@ -120,16 +121,16 @@ export let hud, scoreLabel, livesLabel, messageLabel, paddle, turrets, firingPoi
 export function init() {
     defaultCanvas(40,24)
 
-    paddle = Sprite.create(main.paddle)
+    paddle = AngularSprite.create(main.paddle)
 
     turrets = new Layer()
     firingPoints = new Layer()
     for(let i = 0; i <= 1; i++) {
-        let turret = Sprite.create(main.turret)
+        let turret = AngularSprite.create(main.turret)
         turrets.add(turret)
 
-        let firingPoint = Sprite.create(main.turret.flame)
-        firingPoint.y = turret.topY
+        let firingPoint = AngularSprite.create(main.turret.flame)
+        firingPoint.y = turret.top
         project.actions.push(new Constraint(firingPoint, turret))
         firingPoints.add(firingPoint)
     }
@@ -143,6 +144,6 @@ export function init() {
     scoreLabel = new Label(hud, [score], defaultFontSize, Align.center, Align.top, "Z8")
     messageLabel = new Label(hud, [""], defaultFontSize, Align.center, Align.center)
 
-    tileSet.bricks.setCollision(new Sprite(undefined, 0.5, 0.5, 1.0, 1.0, ShapeType.box)
+    tileSet.bricks.setCollision(new AngularSprite(undefined, 0.5, 0.5, 1.0, 1.0, ShapeType.box)
         , 0, tileSet.bricks.quantity)
 }

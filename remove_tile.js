@@ -65,7 +65,7 @@ export function getBrick(column, row, onlyBase) {
 
     const tile = newTiles.tileByPos(column, row)
     const tileSet = newTiles.tileSet
-    const brick = newTiles.tileSpriteByPos(undefined, column, row)
+    const brick = newTiles.tileAngularSpriteByPos(undefined, column, row)
     brick.shift(0.5 * dx, 0.5 * dy)
     brick.setSize(1 + dx, 1 + dy)
     brick.image = new Img(tileSet.texture, (tile % tileSet.columns) * 48, floor(tile / tileSet.columns) * 48

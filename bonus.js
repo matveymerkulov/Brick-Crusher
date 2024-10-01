@@ -12,6 +12,7 @@ import {bonusSettings} from "./data/bonus.js"
 import {Img} from "../Furca/src/image.js"
 import {bonusEffect} from "./bonus_effect.js"
 import {bonusPack, bonusPackTotal} from "./init_level.js"
+import {AngularSprite} from "../Furca/src/angular_sprite.js"
 
 const BonusState = {
     appearing: 0,
@@ -32,7 +33,7 @@ export class Bonus extends Sprite {
         this.#typeXK = typeXK
         this.#typeYK = typeYK
         this.#type = type
-        this.#typeSprite = new Sprite(ImageArray.create(bonusSettings.images).image(type.imageNumber))
+        this.#typeSprite = new AngularSprite(ImageArray.create(bonusSettings.images).image(type.imageNumber))
         this.#state = BonusState.appearing
         this.#speed = num(speed)
         const effect = getAppearanceEffect(fx, bonuses, bonusSettings.appearanceEffect)(this)
