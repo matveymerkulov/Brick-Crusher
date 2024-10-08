@@ -21,7 +21,7 @@ export class TileMapFillingEffect extends Effect {
         this.#filter = filter[parameters.filter]
         this.#negative = parameters.negative
         this.#duration = num(parameters.duration)
-        this.#pos = -1
+        this.#pos = 0
         this.#startingTime = new Date().getTime()
     }
 
@@ -38,8 +38,8 @@ export class TileMapFillingEffect extends Effect {
             return
         }
         while(newPos > this.#pos) {
-            this.#pos++
             this.apply(this.#pos)
+            this.#pos++
         }
     }
 

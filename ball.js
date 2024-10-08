@@ -1,4 +1,3 @@
-import {Sprite} from "../Furca/src/sprite.js"
 import {ShapeType} from "../Furca/src/shape.js"
 import {main} from "./data/main.js"
 import {Img} from "../Furca/src/image.js"

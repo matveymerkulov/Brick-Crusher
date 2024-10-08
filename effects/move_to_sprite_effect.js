@@ -18,8 +18,4 @@ export class MoveToSpriteEffect extends TimedEffect {
         let dy = this.#toSprite.y - this.#y
         sprite.setPosition(this.#x + dx * k, this.#y + dy * k)
     }
-
-    end() {
-        super.end()
-    }
 }

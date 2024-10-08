@@ -8,6 +8,7 @@ import {Img} from "../Furca/src/image.js"
 import {floor} from "../Furca/src/functions.js"
 import {getDisappearanceEffect} from "./fill/tile_map_filling_modes.js"
 import {createBonus} from "./bonus.js"
+import {AngularSprite} from "../Furca/src/angular_sprite.js"
 
 export function removeTile(ball, column, row, snd) {
     if(levelTemplate.tileByPos(column, row) < brickStart) {
@@ -65,7 +66,8 @@ export function getBrick(column, row, onlyBase) {
 
     const tile = newTiles.tileByPos(column, row)
     const tileSet = newTiles.tileSet
-    const brick = newTiles.tileAngularSpriteByPos(undefined, column, row)
+    const brick = new AngularSprite()
+    newTiles.initTileSpriteByPos(brick, column, row)
     brick.shift(0.5 * dx, 0.5 * dy)
     brick.setSize(1 + dx, 1 + dy)
     brick.image = new Img(tileSet.texture, (tile % tileSet.columns) * 48, floor(tile / tileSet.columns) * 48

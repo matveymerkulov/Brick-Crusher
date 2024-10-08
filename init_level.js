@@ -7,7 +7,6 @@ import {getAppearanceEffect, getFillingModeByParameters, getFillingModes} from "
 import {floor} from "../Furca/src/functions.js"
 import {randomizeBrickTextures} from "./randomize_brick_textures.js"
 import {loopedSound, stopSound, texture} from "../Furca/src/system.js"
-import {Sprite} from "../Furca/src/sprite.js"
 import {Img} from "../Furca/src/image.js"
 import {setPaddleWidth} from "./paddle_size.js"
 import {Ball} from "./ball.js"
@@ -15,6 +14,7 @@ import {fillingMode} from "./data/filling_modes.js"
 import {levels} from "./data/levels.js"
 import {bonusSettings} from "./data/bonus.js"
 import {AngularSprite} from "../Furca/src/angular_sprite.js"
+import {removeBonuses} from "./bonus_effect.js"
 
 export const blocksLeft = new Num()
 export let level, levelParameters, bonusPack, bonusPackTotal, music
@@ -42,6 +42,8 @@ export function initRound() {
         ball.state = BallState.onPaddle
         setGameState(GameState.rolling)
     }
+
+    removeBonuses()
 }
 
 export function initLevel() {

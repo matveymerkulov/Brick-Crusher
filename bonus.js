@@ -2,7 +2,7 @@ import {Sprite} from "../Furca/src/sprite.js"
 import {currentCanvas} from "../Furca/src/canvas.js"
 import {paddle} from "./data/main.js"
 import {bonuses, fx, GameState, gameState} from "./main.js"
-import {apsk, num} from "../Furca/src/system.js"
+import {apsk, num, play} from "../Furca/src/system.js"
 import {boxWithBoxCollision} from "../Furca/src/collisions.js"
 import {rndi} from "../Furca/src/functions.js"
 import {getAppearanceEffect, getDisappearanceEffect} from "./fill/tile_map_filling_modes.js"
@@ -67,6 +67,7 @@ export class Bonus extends Sprite {
 
         if(this.collidesWithSprite(paddle)) {
             this.disappear(true)
+            play("bonus")
         }
     }
 

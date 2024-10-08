@@ -23,6 +23,6 @@ export class RandomFill extends TileMapFillingEffect {
 
     apply(pos) {
         let index = this.#tile[pos]
-        this.applyToTileByPos(newTiles.tileColumn(index), newTiles.tileRow(index))
+        this.applyToTileByPos(newTiles.tileColumnByIndex(index), newTiles.tileRowByIndex(index))
     }
 }

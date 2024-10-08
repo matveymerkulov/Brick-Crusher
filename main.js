@@ -20,17 +20,18 @@ import {removeTile} from "./remove_tile.js"
 import {updateScore} from "./score.js"
 import {Delay} from "./effects/delay.js"
 import {updatePaddleWidth} from "./paddle_size.js"
-import {Sprite} from "../Furca/src/sprite.js"
 import {gun, magnet} from "./bonus_effect.js"
 import {initTileMap} from "../Furca/src/tile_map.js"
 import {AngularSprite} from "../Furca/src/angular_sprite.js"
 
 project.getAssets = () => {
     return {
-        texture: ["texture/balls.png", "texture/bricks.png", "texture/paddles.png", "background/background[0-7].jpg"
+        texture: ["texture/balls.png", "texture/bricks.png", "texture/paddles.png", "background/background2.jpg"
             , "texture/bonus.png", "texture/bonuses.png", "texture/turret.png", "texture/bullet.png", "texture/fire.png"],
-        sound: ["sound/collision[1-4].mp3", "music/music[0-4].mp3", "sound/ball_lost.ogg", "music/game_over.mp3"
-            , "music/victory.mp3", "sound/bullet.mp3", "sound/bullet_hit.mp3"]
+        sound: ["sound/collision[1-4].mp3", "music/music0.mp3", "sound/ball_lost.ogg", "music/game_over.mp3"
+            , "music/victory.mp3", "sound/bullet.mp3", "sound/bullet_hit.mp3", "sound/brick.mp3", "sound/life.mp3"
+            , "sound/split.mp3", "sound/gun.mp3", "sound/score.mp3", "sound/magnet.mp3", "sound/stretch.mp3"
+            , "sound/shrink.mp3", "sound/bonus.mp3"]
     }
 }
 

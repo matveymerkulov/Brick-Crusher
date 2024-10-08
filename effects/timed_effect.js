@@ -1,11 +1,6 @@
 import {SpriteEffect} from "./sprite_effect.js"
 import {num} from "../../Furca/src/system.js"
 
-export const TimedEffectType = {
-    forward: 0,
-    backwards: 1,
-}
-
 export class TimedEffect extends SpriteEffect {
     #duration
     #startingTime
