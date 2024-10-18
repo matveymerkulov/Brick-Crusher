@@ -11,7 +11,7 @@ let actualScore = 0, scoreEffect, decimalScore = 0
 
 export function updateScore() {
     if(decimalScore < actualScore) {
-        decimalScore += apsk * main.score.raisingSpeed
+        decimalScore += apsk * (actualScore - decimalScore + 1)
         if(decimalScore > actualScore) decimalScore = actualScore
         score.value = floor(decimalScore)
     }

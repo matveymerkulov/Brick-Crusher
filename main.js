@@ -1,4 +1,4 @@
-import {mouse, mutedSound, num, play, stopSound} from "../Furca/src/system.js"
+import {loc, mouse, mutedSound, num, play, stopSound} from "../Furca/src/system.js"
 import {abs, atan2, clamp, rad, sin} from "../Furca/src/functions.js"
 import {project} from "../Furca/src/project.js"
 import {loadData} from "./data/tile_maps.js"
@@ -23,13 +23,14 @@ import {updatePaddleWidth} from "./paddle_size.js"
 import {gun, magnet} from "./bonus_effect.js"
 import {initTileMap} from "../Furca/src/tile_map.js"
 import {AngularSprite} from "../Furca/src/angular_sprite.js"
+import "./text.js"
 
 project.getAssets = () => {
     return {
         texture: ["texture/balls.png", "texture/bricks.png", "texture/paddles.png", "background/background2.jpg"
             , "texture/bonus.png", "texture/bonuses.png", "texture/turret.png", "texture/bullet.png", "texture/fire.png"],
         sound: ["sound/collision[1-4].mp3", "music/music0.mp3", "sound/ball_lost.ogg", "music/game_over.mp3"
-            , "music/victory.mp3", "sound/bullet.mp3", "sound/bullet_hit.mp3", "sound/brick.mp3", "sound/life.mp3"
+            , "music/victory.mp3", "sound/bullet.mp3", "sound/bullet_hit.mp3", "sound/life.mp3"
             , "sound/split.mp3", "sound/gun.mp3", "sound/score.mp3", "sound/magnet.mp3", "sound/stretch.mp3"
             , "sound/shrink.mp3", "sound/bonus.mp3"]
     }
@@ -59,7 +60,7 @@ export const GameState = {
 
 export function checkForVictory() {
     if(blocksLeft <= 0) {
-        messageLabel.items[0] = "ВЫ ПОБЕДИЛИ!"
+        messageLabel.items[0] = loc("youWin")
         music.pause()
         victoryMusic.play()
     }
@@ -145,7 +146,7 @@ project.init = () => {
                 ball.setPosition(paddle.x + ball.paddlePosition, initialBallY)
                 if(main.key.wasPressed) {
                     if(ball.state === BallState.onPaddle) {
-                        //music.play()
+                        music.play()
                         stopSound(victoryMusic)
                         stopSound(gameOverMusic)
                         ball.state = BallState.rolling
@@ -202,7 +203,7 @@ project.init = () => {
 
             if(balls.isEmpty) {
                 if(lives.value <= 0) {
-                    messageLabel.items[0] = "ИГРА ОКОНЧЕНА"
+                    messageLabel.items[0] = loc("gameOver")
                     setGameState(GameState.gameOver)
                     gameOverMusic.play()
                     music.pause()
