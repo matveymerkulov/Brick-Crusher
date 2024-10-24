@@ -1,33 +1,31 @@
-import {BrickType} from "./data/main.js"
 import {floor, rndi} from "../Furca/src/functions.js"
 import {levelParameters, levelTemplate, newTiles} from "./init_level.js"
 import {num} from "../Furca/src/system.js"
+import {BrickType, getBrickType} from "./brick_type.js"
 
 export function randomizeBrickTextures() {
-    const columns = levelTemplate.tileSet.columns
-    const breakableTheme = num(levelParameters.breakableTheme) * 4
-    const unbreakableTheme = num(levelParameters.unbreakableTheme) * 4
+    const tileSet = levelTemplate.tileSet
+    const columns = tileSet.columns
     levelTemplate.processTilesByPos((column, row, tileNum) => {
-        let index
-        switch(tileNum) {
+        let tileColumn = tileSet.tileColumnByIndex(tileNum)
+        let tileRow = tileSet.tileRowByIndex(tileNum)
+        switch(getBrickType(tileNum)) {
             case BrickType.leftBrick:
-                index = breakableTheme + rndi(2) * 2 + columns * (4 + rndi(4))
-                newTiles.setTileByPos(column, row, index)
-                newTiles.setTileByPos(column + 1, row, index + 1)
+                tileNum = tileSet.tileNumByPos(tileColumn + 2 * rndi(2), tileRow + rndi(4))
+                newTiles.setTileByPos(column, row, tileNum)
+                newTiles.setTileByPos(column + 1, row, tileNum + 1)
                 break
             case BrickType.topBrick:
-                index = breakableTheme + rndi(4) + columns * (8 + rndi(2) * 2)
-                newTiles.setTileByPos(column, row, index)
-                newTiles.setTileByPos(column, row + 1, index + columns)
+                tileNum = tileSet.tileNumByPos(tileColumn + rndi(4), tileRow + 2 * rndi(2))
+                newTiles.setTileByPos(column, row, tileNum)
+                newTiles.setTileByPos(column, row + 1, tileNum + columns)
                 break
             case BrickType.singleBrick:
-                index = breakableTheme + rndi(4) + columns * (12 + rndi(2))
-                newTiles.setTileByPos(column, row, index)
+                tileNum = tileSet.tileNumByPos(tileColumn + rndi(4), tileRow + rndi(2))
+                newTiles.setTileByPos(column, row, tileNum)
                 break
-            default:
-                if(tileNum >= 16) return
-                index = tileNum % 4 + unbreakableTheme + columns * floor(tileNum / 4)
-                newTiles.setTileByPos(column, row, index)
+            case BrickType.unbreakableBrick:
+                newTiles.setTileByPos(column, row, tileNum)
                 break
         }
     })

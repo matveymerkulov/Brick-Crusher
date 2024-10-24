@@ -15,6 +15,7 @@ import {levels} from "./data/levels.js"
 import {bonusSettings} from "./data/bonus.js"
 import {AngularSprite} from "../Furca/src/angular_sprite.js"
 import {removeBonuses} from "./bonus_effect.js"
+import {BrickType, getBrickType} from "./brick_type.js"
 
 export const blocksLeft = new Num()
 export let level, levelParameters, bonusPack, bonusPackTotal, music
@@ -51,6 +52,10 @@ export function initLevel() {
 
     levelParameters = levels.brackets
     levelTemplate = tileMap.brackets
+
+    levelTemplate.setPosition(0, 0)
+    tileMap.border.pasteTo(levelTemplate)
+
     newTiles = levelTemplate.copy()
 
     bonusPack = bonusSettings.packs[levelParameters.bonusPack]
@@ -70,13 +75,10 @@ export function initLevel() {
 
     blocksLeft.value = 0
 
-    const columns = levelTemplate.tileSet.columns
     levelTemplate.processTilesByIndex((index, tileNum) => {
-        const column = tileNum % 4
-        const row = floor(tileNum / 4)
-        newTiles.setTileByIndex(index, column + row * columns)
+        newTiles.setTileByIndex(index, tileNum)
 
-        if(tileNum < brickStart) return
+        if(getBrickType(tileNum) === BrickType.unbreakableBrick) return
 
         blocksLeft.increment()
     })

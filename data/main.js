@@ -14,14 +14,6 @@ import {rad} from "../../Furca/src/functions.js"
 import {Img} from "../../Furca/src/image.js"
 import {AngularSprite} from "../../Furca/src/angular_sprite.js"
 
-export const BrickType = {
-    leftBrick: 16,
-    rightBrick: 17,
-    topBrick: 18,
-    bottomBrick: 22,
-    singleBrick: 19
-}
-
 export const brickStart = 16
 
 export const main = {

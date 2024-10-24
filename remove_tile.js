@@ -1,5 +1,5 @@
 import {play} from "../Furca/src/system.js"
-import {brickStart, BrickType, main, tuneBrickSprite} from "./data/main.js"
+import {brickStart, main, tuneBrickSprite} from "./data/main.js"
 import {emptyTile} from "../Furca/src/tile_map.js"
 import {bricks, checkForVictory, fx} from "./main.js"
 import {blocksLeft, level, levelParameters, levelTemplate, newTiles} from "./init_level.js"
@@ -9,6 +9,7 @@ import {floor} from "../Furca/src/functions.js"
 import {getDisappearanceEffect} from "./fill/tile_map_filling_modes.js"
 import {createBonus} from "./bonus.js"
 import {AngularSprite} from "../Furca/src/angular_sprite.js"
+import {BrickType, getBrickType} from "./brick_type.js"
 
 export function removeTile(ball, column, row, snd) {
     if(levelTemplate.tileByPos(column, row) < brickStart) {
@@ -18,7 +19,7 @@ export function removeTile(ball, column, row, snd) {
 
     const parameters = getBrick(column, row, false)
     const brick = parameters.brick
-    brick.image.x += 192
+    //brick.image.x += 192
     column = parameters.column
     row = parameters.row
     const dx = parameters.dx
@@ -45,13 +46,13 @@ export function getBrick(column, row, onlyBase) {
     const tileNum = levelTemplate.tileByPos(column, row)
     let dx = 0, dy = 0
 
-    switch(tileNum) {
+    switch(getBrickType(tileNum)) {
         case BrickType.leftBrick:
             dx = 1
             break
         case BrickType.rightBrick:
-            dx = 1
             if(onlyBase) return undefined
+            dx = 1
             column -= 1
             break
         case BrickType.topBrick:
@@ -70,7 +71,7 @@ export function getBrick(column, row, onlyBase) {
     newTiles.initTileSpriteByPos(brick, column, row)
     brick.shift(0.5 * dx, 0.5 * dy)
     brick.setSize(1 + dx, 1 + dy)
-    brick.image = new Img(tileSet.texture, (tile % tileSet.columns) * 48, floor(tile / tileSet.columns) * 48
+    brick.image = new Img(tileSet.texture, tileSet.tileColumnByIndex(tile) * 48, tileSet.tileRowByIndex(tile) * 48
         , 48 * (dx + 1), 48 * (dy + 1))
     tuneBrickSprite(brick)
 

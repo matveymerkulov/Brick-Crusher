@@ -1,7 +1,7 @@
 import {loc, mouse, mutedSound, num, play, stopSound} from "../Furca/src/system.js"
 import {abs, atan2, clamp, rad, sin} from "../Furca/src/functions.js"
 import {project} from "../Furca/src/project.js"
-import {loadData} from "./data/tile_maps.js"
+import {loadData} from "./tile_maps.js"
 import {firingPoints, init, livesLabel, main, messageLabel, paddle, scoreLabel, turrets} from "./data/main.js"
 import {Layer} from "../Furca/src/layer.js"
 import {Num} from "../Furca/src/variable/number.js"
@@ -24,6 +24,7 @@ import {gun, magnet} from "./bonus_effect.js"
 import {initTileMap} from "../Furca/src/tile_map.js"
 import {AngularSprite} from "../Furca/src/angular_sprite.js"
 import "./text.js"
+import {initCollisions} from "../Furca/src/collisions.js"
 
 project.getAssets = () => {
     return {
@@ -73,6 +74,7 @@ export function setGameState(state) {
 project.init = () => {
     loadData()
     initTileMap()
+    initCollisions()
     init()
 
     project.scene.add(background, level, bullets, bonuses, bricks, paddle, balls, turrets, firingPoints
